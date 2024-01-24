@@ -1,0 +1,6 @@
+export SSOID=d-xxxxxxxxxx
+export SSOARN=arn:aws:sso:::instance/ssoins-xxxxxxxxxxxxxxxx
+export ORGANIZATIONID=o-xxxxxxxxxx
+export INSTANCEID=ssoins-xxxxxxxxxxxxxxxx
+export SSOREGION=eu-west-1
+export SSOAWSPROFILE=
