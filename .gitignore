@@ -3,3 +3,4 @@
 *.csv
 .venv/
 temp/
+*.xlsx
