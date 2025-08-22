@@ -19,7 +19,7 @@ for page in paginator.paginate():
 print(f"Comptes trouvés : {len(accounts)}")
 
 # Préparer CSV
-with open("cloudfront_distributions.csv", "w", newline="") as csvfile:
+with open("OrgCloudfront_distributions.csv", "w", newline="") as csvfile:
     fieldnames = ["AccountId", "DistributionId", "DomainName", "Comment", "Enabled"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
