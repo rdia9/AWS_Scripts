@@ -28,6 +28,7 @@ def get_ec2_public_ips(ec2_client):
 
 # Récupérer les Elastic IPs
 def get_elastic_ips(ec2_client):
+    """Récupérer les Elastic IPs"""
     ips = []
     response = ec2_client.describe_addresses()
     for address in response['Addresses']:
@@ -41,6 +42,7 @@ def get_elastic_ips(ec2_client):
 
 # Récupérer les NAT Gateways et leurs IPs
 def get_nat_gateway_ips(ec2_client):
+    """Récupérer les IPs des NAT Gateways"""
     ips = []
     response = ec2_client.describe_nat_gateways()
     for nat_gateway in response['NatGateways']:
@@ -55,6 +57,7 @@ def get_nat_gateway_ips(ec2_client):
 
 # Récupérer les IPs des Classic Load Balancers (ELB)
 def get_classic_elb_ips(elb_client):
+    """Récupérer les IPs des Classic Load Balancers (ELB)"""
     ips = []
     response = elb_client.describe_load_balancers()
     for load_balancer in response['LoadBalancerDescriptions']:
@@ -67,6 +70,7 @@ def get_classic_elb_ips(elb_client):
 
 # Récupérer les IPs des Application/Network Load Balancers (ELBv2)
 def get_elbv2_ips(elbv2_client):
+    """Récupérer les IPs des Application/Network Load Balancers (ELBv2)"""
     ips = []
     response = elbv2_client.describe_load_balancers()
     for load_balancer in response['LoadBalancers']:
@@ -80,6 +84,7 @@ def get_elbv2_ips(elbv2_client):
 
 # Récupérer les IPs des instances DocumentDB
 def get_docdb_ips(docdb_client):
+    """Récupérer les IPs des instances DocumentDB"""
     ips = []
     response = docdb_client.describe_db_instances()
     for db_instance in response['DBInstances']:
@@ -93,6 +98,7 @@ def get_docdb_ips(docdb_client):
 
 # Lister toutes les adresses IP publiques dans chaque compte
 def list_public_ips_for_account():
+    """Récupérer les adresses IP publiques pour un compte AWS"""
     session = get_default_session()
 
     ec2_client = session.client('ec2')
